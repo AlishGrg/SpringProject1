@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-4.3.xsd 
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+    
+    <bean id="StudentBean" class="com.lti.pojo.Student">
+    <property name="studentId" value="1001"></property>
+    <property name="studentName" value="Sanam"></property>
+     <property name="address" ref="AddressBean"></property>
+    </bean>
+    
+    <bean id="AddressBean" class="com.lti.pojo.Address">
+    <property name="street" value = "Dr. Ambedkar Marg, Street no. 2"></property>
+    <property name="city" value="Hyderabad"></property>
+    </bean>
+   	<!-- 
+    <bean id="product" class="com.lti.pojo.Product" scope="singleton">
+    </bean>		 --> 
+    
+    <bean id="product" class="com.lti.pojo.Product" scope="prototype">
+    </bean>
+</beans>
